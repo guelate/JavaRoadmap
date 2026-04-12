@@ -1,0 +1,1 @@
+//must implement chasse(), runFast and runSlow
