@@ -7,7 +7,7 @@ public abstract class Animal {
     }
 
     public void mange(){
-        System.out.println(name + "mange.");
+        System.out.println(name+" mange.");
     }
 
     public abstract void chasse();

@@ -1,3 +1,3 @@
 public interface RunFast {
-    String speed();
+    void speedFast();
 }

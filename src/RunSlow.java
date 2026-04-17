@@ -1,5 +1,8 @@
 public interface RunSlow {
-    String speed();
-}
 
-//call
+    void speedSlow();
+
+    default void getAllure(){
+        System.out.println("run slowly");
+    }
+}
