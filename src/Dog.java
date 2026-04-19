@@ -1,7 +1,24 @@
 public class Dog extends Animal implements  RunFast,RunSlow{
 
-    public Dog(String name){
+    private int age;
+    private final String state;
+    private final boolean young;
+
+    public Dog(String name, int age, String state, boolean young){
         super(name);
+        this.age = age;
+        this.state = state;
+        this.young = young;
+    }
+
+    //getter
+    public String getState(){return state;}
+    public int getAge(){return age;}
+    public boolean  isYoung(){ return young;};
+    public String getName() {return name;}
+    //setter
+    public void setAge(int age){
+        this.age = age;
     }
 
     //method from parent class
