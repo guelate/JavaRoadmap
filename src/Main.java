@@ -56,3 +56,4 @@ void main() {
 }
 
 //Exception: 4try/Catch, 5Throws, 6Create mine checked and unchecked
+//Encapsulation
