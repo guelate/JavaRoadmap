@@ -1,3 +1,18 @@
+//Read file
+public void readFile(String name) {
+    try {
+        IO.println(new String(Files.readAllBytes(Paths.get(name))));
+    } catch (IOException e) {
+        IO.println("file not found");
+    }
+}
+
+public void readFileThrow(String name) throws IOException{
+    IO.println(new String(Files.readAllBytes(Paths.get(name))));
+
+}
+
+
 void main() {
     IO.println("Hello World !");
 
@@ -13,7 +28,7 @@ void main() {
     if(animal.getAge() < 18){
         IO.println(animal.isYoung());
     }else{
-        IO.println(animal.name +"is not young");
+        IO.println(animal.getName() +"is not young");
     }
     animal.setAge(20);
     if(animal.getAge() < 18){
@@ -22,10 +37,22 @@ void main() {
         IO.println(animal.name +" is not young");
     }
 
+    //Exception
+    readFile("text.txt");
 
+    //multiple exceptions
+    try {
+        readFile("multiple.txt");
+    }catch (SecurityException e){
+        System.out.println("access denied"+e);
+    }
+
+    //throws
+    try {
+        readFileThrow("text.txt");
+    } catch (IOException e) {
+        IO.println("fileThrow not found");
+    }
 }
 
-//implement abstract class with subclasses that implement two interfaces: ok
-//call mange() subclass and interface methode: ok
-//one interfaces must have a default method call it in main():ok
-//add getter() for boolean type and other type:ok
+//Exception: 4try/Catch, 5Throws, 6Create mine checked and unchecked
