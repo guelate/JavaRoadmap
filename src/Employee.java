@@ -5,15 +5,22 @@ public class Employee {
 
     public Employee(String name, int salary){
         this.name = name;
-        this.salary = salary;
+        this.setSalary(salary);
     }
 
     public int bonus(){
-        return salary = salary + 500;
+        return setSalary(getSalary() + 500);
     };
 
     public String getName(){
         return name;
     }
 
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
 }
