@@ -17,7 +17,8 @@ void main() {
     IO.println("Hello World !");
 
     Employee first = new Employee("David",2000);
-    IO.println(first.bonus());
+    first.setSalary(2000);
+    IO.println(first.getSalary());
 
     Dog animal = new Dog("Kevin",11,"Calm",true);
     animal.mange();
@@ -53,7 +54,11 @@ void main() {
     } catch (IOException e) {
         IO.println("fileThrow not found");
     }
+
+    //Encapsulation
+    Garage garage = new Garage("Peugeot",100);
+    IO.println(garage.getCar());
 }
 
 //Exception: 4try/Catch, 5Throws, 6Create mine checked and unchecked
-//Encapsulation
+//equals() and hashcode()

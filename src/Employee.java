@@ -5,12 +5,8 @@ public class Employee {
 
     public Employee(String name, int salary){
         this.name = name;
-        this.setSalary(salary);
+        this.salary = salary;
     }
-
-    public int bonus(){
-        return setSalary(getSalary() + 500);
-    };
 
     public String getName(){
         return name;
