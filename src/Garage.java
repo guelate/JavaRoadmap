@@ -22,9 +22,10 @@ public class Garage {
 
     public void setPrice(int price) {
         if (price <= 0) {
-            throw new IllegalArgumentException("price can't be 0 or negative");
+            throw new InvalidPriceException("price can't be 0 or negative");
         } else {
             this.price = price;
         }
     }
 }
+

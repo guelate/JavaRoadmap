@@ -7,9 +7,9 @@ public void readFile(String name) {
     }
 }
 
+//throw exception
 public void readFileThrow(String name) throws IOException{
     IO.println(new String(Files.readAllBytes(Paths.get(name))));
-
 }
 
 
@@ -45,8 +45,9 @@ void main() {
     try {
         readFile("multiple.txt");
     }catch (SecurityException e){
-        System.out.println("access denied"+e);
+        System.out.println("access denied"+e); //it the second catch after IOException
     }
+
 
     //throws
     try {
@@ -56,9 +57,12 @@ void main() {
     }
 
     //Encapsulation
-    Garage garage = new Garage("Peugeot",100);
+    Garage garage = new Garage("Peugeot",0); // should compile and fail at execution -> unchecked exception
     IO.println(garage.getCar());
+    Garage garageSecond = new Garage("Peugeot",10); // compile and show the result
+    IO.println(garageSecond.getCar());
 }
 
 //Exception: 4try/Catch, 5Throws, 6Create mine checked and unchecked
+// NullPointerException, ArrayIndexOutOfBounds -> unchecked
 //equals() and hashcode()
