@@ -68,7 +68,25 @@ void main() throws CarNotAcceptedException {
     }catch (CarNotAcceptedException e){
         IO.println(e.getMessage()); // Car not accepted : Ferrari
     }
+    // NullPointerException, ArrayIndexOutOfBounds -> This kind of errors should be not catch but fix
+
+    String car = null;
+    String[] cars = {"Peugeot","Mercedes"};
+
+    int index = 2;
+    //Remember: we don't use try catch for NullPointerException and ArrayIndexOutOfBounds
+    if(car != null){
+        IO.println((car));
+    }else{
+        IO.println("car is null");
+    }
+
+    if(index < cars.length){
+        IO.println(cars[index]);
+    }else{
+        IO.println("index "+index+ " is invalid");
+    }
 }
 
-// NullPointerException, ArrayIndexOutOfBounds -> unchecked
+
 //equals() and hashcode()
