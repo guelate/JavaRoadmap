@@ -13,7 +13,7 @@ public void readFileThrow(String name) throws IOException{
 }
 
 
-void main() {
+void main() throws CarNotAcceptedException {
     IO.println("Hello World !");
 
     Employee first = new Employee("David",2000);
@@ -56,13 +56,19 @@ void main() {
         IO.println("fileThrow not found");
     }
 
-    //Encapsulation
-    Garage garage = new Garage("Peugeot",0); // should compile and fail at execution -> unchecked exception
-    IO.println(garage.getCar());
+    //Encapsulation and mine checked and unchecked exception
+   // Garage garage = new Garage("Peugeot",0); // should compile and fail at execution -> unchecked exception
+
+   // IO.println(garage.getCar());
     Garage garageSecond = new Garage("Peugeot",10); // compile and show the result
     IO.println(garageSecond.getCar());
+
+    try{
+        garageSecond.setCar("Ferrari");
+    }catch (CarNotAcceptedException e){
+        IO.println(e.getMessage()); // Car not accepted : Ferrari
+    }
 }
 
-//Exception: 4try/Catch, 5Throws, 6Create mine checked and unchecked
 // NullPointerException, ArrayIndexOutOfBounds -> unchecked
 //equals() and hashcode()
